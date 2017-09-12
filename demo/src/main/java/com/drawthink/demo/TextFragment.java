@@ -26,7 +26,7 @@ public class TextFragment extends Fragment implements OnRecyclerViewListener.OnI
 
 
     private List<RecyclerViewData> mDatas;
-    private RecyclerView mRecyclerview;
+    private RecyclerView mRecyclerView;
     private BookAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
 
@@ -42,17 +42,16 @@ public class TextFragment extends Fragment implements OnRecyclerViewListener.OnI
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Integer.valueOf("as");
         View view = inflater.inflate(R.layout.fragment_text, container, false);
-        mRecyclerview = (RecyclerView) view.findViewById(R.id.recyclerview);
-        mRecyclerview.setLayoutManager(linearLayoutManager);
-        mRecyclerview.addItemDecoration(new SimplePaddingDecoration(getActivity()));
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.addItemDecoration(new SimplePaddingDecoration(getActivity()));
 
         adapter = new BookAdapter(getActivity(), mDatas);
         adapter.setOnItemClickListener(this);
         adapter.setOnItemLongClickListener(this);
 
-        mRecyclerview.setAdapter(adapter);
+        mRecyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         return view;
     }

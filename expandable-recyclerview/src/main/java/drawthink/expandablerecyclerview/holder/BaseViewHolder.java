@@ -39,8 +39,6 @@ public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     /**
      * return GroupView root layout id
-     * */
+     **/
     public abstract int getGroupViewResId();
-
-
 }
